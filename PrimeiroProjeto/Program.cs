@@ -1,7 +1,7 @@
 ﻿// Screen Sound
 
 // Variáveis, parâmetros e campos privados -> Usar camelCase
-string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
+string mensagemDeBoasVindas = "      SCREEN SOUND";
 
 // Métodos(incluindo void), propriedades e classes -> Usar PascalCase
 // Todas começam com letra maiúscula
@@ -24,14 +24,31 @@ void ExibirOpcoesDoMenu()
     Console.Write("\nDigite a sua opção: ");
     string opcaoEscolhida = Console.ReadLine()!;
     int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
-    if (opcaoEscolhidaNumerica == 1)
+
+    switch (opcaoEscolhidaNumerica)
     {
-        Console.WriteLine("Você digitou a opção: " + opcaoEscolhida);
+        case 1:
+            Console.WriteLine("Você escolheu a opção" + opcaoEscolhida);
+            break;
+        case 2:
+            Console.WriteLine("Você escolheu a opção" + opcaoEscolhida);
+            break;
+        case 3:
+            Console.WriteLine("Você escolheu a opção" + opcaoEscolhida);
+            break;
+        case 4:
+            Console.WriteLine("Você escolheu a opção" + opcaoEscolhida);
+            break;
+        case 5:
+            Console.WriteLine("Programa encerrado");
+            break;
+        default:
+            Console.WriteLine("Opção inválida");
+            break;
     }
 }
 
 ExibirMensagemDeBoasVindas();
 ExibirOpcoesDoMenu();
-
 
 

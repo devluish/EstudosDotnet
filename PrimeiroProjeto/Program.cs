@@ -13,11 +13,21 @@ void ExibirMensagemDeBoasVindas()
 }
 void ExibirOpcoesDoMenu()
 {
+    Console.WriteLine("Menu");
     Console.WriteLine("\n1- Para registrar uma banda");
     Console.WriteLine("2- Para mostrar todas as bandas");
     Console.WriteLine("3- Para avaliar uma banda");
     Console.WriteLine("4- Para exibir a média das bandas");
     Console.WriteLine("5- Sair");
+
+    // Usado o apenas o Write pois não quer que pule linha e sim o Readline ficar na mesma linha do ultimo console.
+    Console.Write("\nDigite a sua opção: ");
+    string opcaoEscolhida = Console.ReadLine()!;
+    int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
+    if (opcaoEscolhidaNumerica == 1)
+    {
+        Console.WriteLine("Você digitou a opção: " + opcaoEscolhida);
+    }
 }
 
 ExibirMensagemDeBoasVindas();

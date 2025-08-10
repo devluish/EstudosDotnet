@@ -11,9 +11,17 @@ void ExibirMensagemDeBoasVindas()
     Console.WriteLine(mensagemDeBoasVindas);
     Console.WriteLine("************************");
 }
+void ExibirOpcoesDoMenu()
+{
+    Console.WriteLine("\n1- Para registrar uma banda");
+    Console.WriteLine("2- Para mostrar todas as bandas");
+    Console.WriteLine("3- Para avaliar uma banda");
+    Console.WriteLine("4- Para exibir a média das bandas");
+    Console.WriteLine("5- Sair");
+}
 
 ExibirMensagemDeBoasVindas();
-
+ExibirOpcoesDoMenu();
 
 
 

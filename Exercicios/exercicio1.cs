@@ -14,6 +14,9 @@ void PrimeiraMensagem()
 
 void Menu()
 {
+    Console.Clear();
+    PrimeiraMensagem();
+
     Console.WriteLine("\n1- Para cadastrar");
     Console.WriteLine("2- Para verificar cadastro");
     Console.WriteLine("3- Para excluir cadastro");
@@ -27,7 +30,7 @@ void Menu()
     switch(escolhaIntUsuario)
     {
         case 1:
-            Console.WriteLine("Você escolheu a opção: " + escolha);
+            CadastrarUsuario();
             break;
 
         case 2: 
@@ -42,11 +45,24 @@ void Menu()
             Console.WriteLine("Saindo do programa");
             break;
 
-    }
-    
-
+    }  
 }
 
+// Método para cadastrar usuário
+void CadastrarUsuario()
+{
+    Console.Clear();
+    Console.WriteLine("Cadastro de usuário");
+    
+    Console.Write("Nome: ");
+    string nomeUsuario = Console.ReadLine()!;
+    Console.WriteLine($"Nome cadastrado com sucesso: {nomeUsuario}");
 
-PrimeiraMensagem();
+    Console.Write("Idade: ");
+    string idadeUsuario = Console.ReadLine()!;
+    Console.WriteLine($"Idade cadastrada com sucesso: {idadeUsuario}");
+
+    Menu();
+}
+
 Menu();

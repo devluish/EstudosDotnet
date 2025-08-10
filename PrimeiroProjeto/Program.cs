@@ -5,7 +5,7 @@ string mensagemDeBoasVindas = "      SCREEN SOUND";
 
 // Métodos(incluindo void), propriedades e classes -> Usar PascalCase
 // Todas começam com letra maiúscula
-void ExibirMensagemDeBoasVindas()
+void ExibirLogo()
 {
     Console.WriteLine("************************");
     Console.WriteLine(mensagemDeBoasVindas);
@@ -13,6 +13,8 @@ void ExibirMensagemDeBoasVindas()
 }
 void ExibirOpcoesDoMenu()
 {
+    ExibirLogo();
+
     Console.WriteLine("Menu");
     Console.WriteLine("\n1- Para registrar uma banda");
     Console.WriteLine("2- Para mostrar todas as bandas");
@@ -28,7 +30,7 @@ void ExibirOpcoesDoMenu()
     switch (opcaoEscolhidaNumerica)
     {
         case 1:
-            Console.WriteLine("Você escolheu a opção" + opcaoEscolhida);
+            RegistrarBanda();
             break;
         case 2:
             Console.WriteLine("Você escolheu a opção" + opcaoEscolhida);
@@ -48,7 +50,20 @@ void ExibirOpcoesDoMenu()
     }
 }
 
-ExibirMensagemDeBoasVindas();
+void RegistrarBanda()
+{
+    Console.Clear();
+    Console.WriteLine("REGISTRO DE BANDA");
+    Console.Write("Nome: ");
+    string nomeBanda = Console.ReadLine()!;
+    Console.WriteLine($"A banda {nomeBanda} foi registrada com sucesso!");
+    Thread.Sleep(1000);
+    Console.Clear();
+
+    ExibirOpcoesDoMenu();
+
+}
+
 ExibirOpcoesDoMenu();
 
 

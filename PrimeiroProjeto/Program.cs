@@ -11,6 +11,12 @@ void ExibirLogo()
     Console.WriteLine(mensagemDeBoasVindas);
     Console.WriteLine("************************");
 }
+
+// Foi criado uma lista para armazenar os dados de cadastro do usuário.
+// Criação da lista por padrão vem com o nome de Strings -> Fazer a alteração pelo nome da lista
+List<string> listaDeBandas = new List<string>();
+
+
 void ExibirOpcoesDoMenu()
 {
     ExibirLogo();
@@ -56,12 +62,12 @@ void RegistrarBanda()
     Console.WriteLine("REGISTRO DE BANDA");
     Console.Write("Nome: ");
     string nomeBanda = Console.ReadLine()!;
+    listaDeBandas.Add(nomeBanda); // Adicionando a lista de bandas.
     Console.WriteLine($"A banda {nomeBanda} foi registrada com sucesso!");
     Thread.Sleep(1000);
     Console.Clear();
 
     ExibirOpcoesDoMenu();
-
 }
 
 ExibirOpcoesDoMenu();

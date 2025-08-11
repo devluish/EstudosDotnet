@@ -14,7 +14,7 @@ void ExibirLogo()
 
 // Foi criado uma lista para armazenar os dados de cadastro do usuário.
 // Criação da lista por padrão vem com o nome de Strings -> Fazer a alteração pelo nome da lista
-List<string> listaDeBandas = new List<string>();
+List<string> listaDeBandas = new List<string> {"Pink Floyd","Iron Maiden", "Oficina G3", "Deep Purple"};
 
 
 void ExibirOpcoesDoMenu()
@@ -39,7 +39,7 @@ void ExibirOpcoesDoMenu()
             RegistrarBanda();
             break;
         case 2:
-            Console.WriteLine("Você escolheu a opção" + opcaoEscolhida);
+            MostrarBandasRegistradas();
             break;
         case 3:
             Console.WriteLine("Você escolheu a opção" + opcaoEscolhida);
@@ -59,7 +59,7 @@ void ExibirOpcoesDoMenu()
 void RegistrarBanda()
 {
     Console.Clear();
-    Console.WriteLine("REGISTRO DE BANDA");
+    Console.WriteLine("REGISTRO DE BANDA\n");
     Console.Write("Nome: ");
     string nomeBanda = Console.ReadLine()!;
     listaDeBandas.Add(nomeBanda); // Adicionando a lista de bandas.
@@ -67,6 +67,23 @@ void RegistrarBanda()
     Thread.Sleep(1000);
     Console.Clear();
 
+    ExibirOpcoesDoMenu();
+}
+
+void MostrarBandasRegistradas()
+{
+    Console.Clear();
+    Console.WriteLine("EXIBINDO TODAS AS BANDAS REGISTRADAS\n");
+
+    for (int i = 0; i < listaDeBandas.Count; i++)
+    {
+        Console.WriteLine($"Banda: {listaDeBandas[i]}");
+    }
+
+
+    Console.WriteLine("\nDigite uma tecla para voltar ao menu principal: ");
+    Console.ReadKey();
+    Console.Clear();
     ExibirOpcoesDoMenu();
 }
 

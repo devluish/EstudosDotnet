@@ -9,8 +9,11 @@
 // 2-) Completa automaticamente com new Dictionary igual o dicionário criado
 
 // List<string> listaDeBandas = new List<string> {"Pink Floyd","Iron Maiden", "Oficina G3", "Deep Purple"};
+using System;
+using System.Drawing;
+
 Dictionary<string, List<double>> bandasRegistradas = new Dictionary<string, List<double>>();
-bandasRegistradas.Add("Link Park", new List<double> { 10, 8, 9 });
+bandasRegistradas.Add("Linkin Park", new List<double> { 10, 8, 9 });
 bandasRegistradas.Add("Pink Floyd", new List<double>());
 
 string mensagemDeBoasVindas = "      SCREEN SOUND";
@@ -122,6 +125,14 @@ void AvaliarBanda()
     
     if(bandasRegistradas.ContainsKey(nomeDaBanda))
     {
+        Console.Write($"Qual a nota que  a banda {nomeDaBanda} merece: ");
+        int nota = int.Parse(Console.ReadLine()!);
+        bandasRegistradas[nomeDaBanda].Add(nota); // O colchetes está acessando um valor dentro do dicionário usando a chave.
+        // NomeDaBanda → variável que guarda o nome da banda digitado pelo usuário.
+        // BandasRegistradas[nomeDaBanda] → pega o valor associado a essa chave no dicionário.
+        Console.WriteLine($"\nA nota {nota} foi registrada com sucesso para a banda {nomeDaBanda}");
+        Thread.Sleep(4000);
+        ExibirOpcoesDoMenu();
 
     } else
     {

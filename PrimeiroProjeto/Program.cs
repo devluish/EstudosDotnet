@@ -75,9 +75,15 @@ void MostrarBandasRegistradas()
     Console.Clear();
     Console.WriteLine("EXIBINDO TODAS AS BANDAS REGISTRADAS\n");
 
-    for (int i = 0; i < listaDeBandas.Count; i++)
+    //for (int i = 0; i < listaDeBandas.Count; i++)
+    //{
+    //    Console.WriteLine($"Banda: {listaDeBandas[i]}");
+    //}
+
+    //foreach é uma maneira mais simples de percorrer o looping, precisará ser análisado qual das formas optar, entre o foreach ou o for padrão;
+    foreach (string banda in listaDeBandas)
     {
-        Console.WriteLine($"Banda: {listaDeBandas[i]}");
+        Console.WriteLine($"Banda: {banda}");
     }
 
 

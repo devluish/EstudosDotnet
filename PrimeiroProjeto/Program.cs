@@ -1,9 +1,6 @@
 ﻿// Screen Sound
 // Todas começam com letra maiúscula
 
-
-
-
 // O que aconteceu aqui? Houve uma mudança do formato List para um Disctionary, qual seria a lógica por trás?
 // 1-) Dicionario<Tipo da chave "string", <Definir os valores "int">> Depois colocar o nome do dicionário
 // 2-) Completa automaticamente com new Dictionary igual o dicionário criado
@@ -67,7 +64,7 @@ void ExibirOpcoesDoMenu()
             AvaliarBanda();
             break;
         case 4:
-            Console.WriteLine("Você escolheu a opção" + opcaoEscolhida);
+            ExibirMediaBanda();
             break;
         case 5:
             Console.WriteLine("Programa encerrado");
@@ -134,7 +131,8 @@ void AvaliarBanda()
         Thread.Sleep(4000);
         ExibirOpcoesDoMenu();
 
-    } else
+    } 
+    else
     {
         Console.WriteLine($"A Banda {nomeDaBanda} não foi encontrada!");
         Console.WriteLine("Digite uma tecla para voltar ao menu principal");
@@ -142,11 +140,35 @@ void AvaliarBanda()
         ExibirOpcoesDoMenu();   
     }
 
-
     // Digitar banda que deseja avaliar (Pesquisar/Buscar)
     // Se a banda existir no dicionário >> Atribuir uma nota
     // Se não exister exibe uma mensagem e voltar para o menu principal
+}
 
+void ExibirMediaBanda()
+{
+    Console.Clear();
+    Console.WriteLine("Média das bandas\n");
+    Console.Write("Digite o nome da banda: ");
+    string nomeBandaMedia = Console.ReadLine()!;
+
+    if (bandasRegistradas.ContainsKey(nomeBandaMedia))
+    {
+        List<double> notasDaBanda = bandasRegistradas[nomeBandaMedia];
+        Console.WriteLine($"A média da banda: {nomeBandaMedia} É {notasDaBanda.Average()}\n");
+        Console.WriteLine("Digite uma tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesDoMenu();
+
+    }
+    else 
+    {
+        Console.WriteLine($"A Banda {nomeBandaMedia} não foi encontrada!");
+        Console.WriteLine("Digite uma tecla para voltar ao menu principal");
+        Console.ReadKey();
+        ExibirOpcoesDoMenu();
+    }
 }
 
 ExibirOpcoesDoMenu();

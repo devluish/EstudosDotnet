@@ -1,6 +1,5 @@
 ﻿// Screen Sound
 // Todas começam com letra maiúscula
-
 // O que aconteceu aqui? Houve uma mudança do formato List para um Disctionary, qual seria a lógica por trás?
 // 1-) Dicionario<Tipo da chave "string", <Definir os valores "int">> Depois colocar o nome do dicionário
 // 2-) Completa automaticamente com new Dictionary igual o dicionário criado
@@ -33,7 +32,6 @@ void ExibirTituloDaOpcao(string titulo)
 
 // Foi criado uma lista para armazenar os dados de cadastro do usuário.
 // Criação da lista por padrão vem com o nome de Strings -> Fazer a alteração pelo nome da lista
-
 
 void ExibirOpcoesDoMenu()
 {
